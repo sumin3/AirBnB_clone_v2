@@ -55,7 +55,7 @@ def do_deploy(archive_path):
 def deploy():
     try:
         created_archive = do_pack()
-        do_deploy = do_deploy(created_archive)
-        return do_deploy
+        do_deploys = do_deploy(created_archive)
+        return do_deploys
     except:
         return False
