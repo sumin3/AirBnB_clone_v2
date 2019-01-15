@@ -12,7 +12,7 @@ mkdir -p /data/web_static/releases/test/
 touch /data/web_static/releases/test/index.html
 echo "Holberton School!" | tee /data/web_static/releases/test/index.html
 ln -sf /data/web_static/releases/test /data/web_static/current
-chown ubuntu:ubuntu /data/
+chown -R ubuntu:ubuntu /data/
 file="/etc/nginx/sites-available/default"
 if ! grep -q "location /hbnb_static {" $file
 then
