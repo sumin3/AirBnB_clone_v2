@@ -14,7 +14,7 @@ def do_deploy(archive_path):
     try:
         put(archive_path, "/tmp/")
         arch_filename_tgz = archive_path.split('/')[1]
-        arch_filename_no_tgz = arch_filename_tgz.split('.')[1]
+        arch_filename_no_tgz = arch_filename_tgz.split('.')[0]
         target_path = "/data/web_static/releases/{}/".format(
             arch_filename_no_tgz)
         run("sudo mkdir -p {}".format(target_path))
