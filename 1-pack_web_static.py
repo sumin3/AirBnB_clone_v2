@@ -22,8 +22,7 @@ def do_pack():
         file_path = local("tar -cvzf {} {}".format(arch_path, source_dir),
                           capture=False)
         file_size = os.stat(arch_path).st_size
-        full_arch_path = os.getcwd() + "/versions"
         print("web_static packed: {} -> {}Bytes".format(arch_path, file_size))
-        return full_arch_path
+        return arch_path
     except:
         return None
