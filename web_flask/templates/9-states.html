@@ -18,12 +18,12 @@
 	  {% else %}
 	  {%- for obj in state.values() | sort(attribute='name') %}
 	  {%- if obj.id == id_num %}
-	  <H1>States: {{ obj.name }}</H1>
+	  <H1>State: {{ obj.name }}</H1>
 	  <H3>Cities:</H3>
 	  <UL>
 
 	    {% for city in obj.cities | sort(attribute='name') %}
-	    <LI>{{ city.id }}: <B>{{ city.name }}</B>
+	    <LI>{{ city.id }}: <B>{{ city.name }}</B><LI>
 	      {% endfor %}
 	      {%- endif %}
 	      {%- endfor %}
