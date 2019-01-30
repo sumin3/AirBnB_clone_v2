@@ -16,8 +16,11 @@ app = Flask(__name__)
 def states_list(id_num=None):
     """display html page"""
     state = storage.all("State")
-    if id_num is not None and "State.{}".format(id_num) not in state:
-        state = None
+    if id_num is not None:
+        if "State.{}".format(id_num) not in state:
+            state = None
+        else:
+            id_num = "State.{}".format(id_num)
     return render_template('9-states.html',
                            state=state,
                            id_num=id_num)
