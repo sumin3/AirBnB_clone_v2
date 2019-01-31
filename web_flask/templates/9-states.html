@@ -6,18 +6,11 @@
     <BODY>
       {% if state == None %}
           <H1>Not found!<H1>
-      {% elif id_num == None %}
-	  <H1>States</H1>
-	  <UL>
-	    {% for obj in state.values() | sort(attribute='name') %}
-	    <LI>{{ obj.id }}: <B>{{ obj.name }}</B></LI>
-	    {% endfor %}
-	  </UL>
       {% else %}
-	  <H1>State: {{ state[id_num].name }}</H1>
+	  <H1>State: {{ id_num.name }}</H1>
 	  <H3>Cities:</H3>
 	  <UL>
-	    {% for city in state[id_num].cities | sort(attribute='name') %}
+	    {% for city in id_num.cities | sort(attribute='name') %}
 	    <LI>{{ city.id }}: <B>{{ city.name }}</B><LI>
 	      {% endfor %}
 	  </UL>
