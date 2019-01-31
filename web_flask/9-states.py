@@ -12,6 +12,11 @@ app = Flask(__name__)
 
 
 @app.route('/states', strict_slashes=False)
+def states():
+    """display html page"""
+    return render_template('7-states_list.html', state=storage.all("State"))
+
+
 @app.route('/states/<id_num>', strict_slashes=False)
 def states_list(id_num=None):
     """display html page"""
@@ -20,7 +25,7 @@ def states_list(id_num=None):
         if "State.{}".format(id_num) not in state:
             state = None
         else:
-            id_num = "State.{}".format(id_num)
+            id_num = state.get("State.{}".format(id_num))
     return render_template('9-states.html',
                            state=state,
                            id_num=id_num)
