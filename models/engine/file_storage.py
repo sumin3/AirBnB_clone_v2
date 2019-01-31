@@ -27,6 +27,8 @@ class FileStorage:
         """
         if cls:
             d = {}
+            if type(cls) == str:
+                cls = eval(cls)
             for key, value in self.__objects.items():
                 if value.__class__ == cls:
                     d[key] = value
